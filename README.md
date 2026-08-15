@@ -14,4 +14,14 @@ Since kubectl needs some time to set up the deployments and services, I recommen
 - [Backend](https://github.com/surmavagit/minesweeper-backend)
 - [Frontend](https://github.com/surmavagit/minesweeper-frontend)
 
-  Each project is dockerised and pushed to DockerHub.
+Each project is dockerised and pushed to DockerHub.
+
+Images are __publicly available__ as:
+- surmava/minesweeper-generator
+- surmava/minesweeper-backend
+- surmava/minesweeper-frontend
+
+## Azure
+
+The whole project is deployed on Azure Kubernetes Services.
+[Minesweeper on AKS](http://134.112.146.202/)
