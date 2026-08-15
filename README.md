@@ -10,8 +10,8 @@ Since kubectl needs some time to set up the deployments and services, I recommen
 
 
 ## Sub-Projects
-- [Map Generator](github.com/surmavagit/minesweeper-generator)
-- [Backend](github.com/surmavagit/minesweeper-backend)
-- [Frontend](github.com/surmavagit/minesweeper-frontend)
+- [Map Generator](https://github.com/surmavagit/minesweeper-generator)
+- [Backend](https://github.com/surmavagit/minesweeper-backend)
+- [Frontend](https://github.com/surmavagit/minesweeper-frontend)
 
   Each project is dockerised and pushed to DockerHub.
