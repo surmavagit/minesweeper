@@ -10,7 +10,7 @@ if [[ -z $GENERATORIP ]]; then
 	exit 1
 fi
 
-kubectl create deployment backend --image=surmava/minesweeper-backend:0.0.1 --port 8080 -r 1 -- node index.js $GENERATORIP
+kubectl create deployment backend --image=surmava/minesweeper-backend:0.0.1 --port 8080 -r 1 -- node index.js "${GENERATORIP}:8000"
 kubectl expose deployment backend --name=backend-service --port 8080 --target-port 8080 --type LoadBalancer
 
 # get previous external ip
@@ -20,5 +20,5 @@ if [[ -z $BACKENDIP ]]; then
 	exit 1
 fi
 
-kubectl create deployment frontend --image=surmava/minesweeper-frontend:0.0.1 --port 80 -r 1 -- /usr/local/bin/run.sh $BACKENDIP
+kubectl create deployment frontend --image=surmava/minesweeper-frontend:0.0.1 --port 80 -r 1 -- /usr/local/bin/run.sh "${BACKENDIP}:8080"
 kubectl expose deployment frontend --name=frontend-service --port 80 --target-port 80 --type LoadBalancer
