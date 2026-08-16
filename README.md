@@ -21,6 +21,13 @@ Images are __publicly available__ as:
 - surmava/minesweeper-backend
 - surmava/minesweeper-frontend
 
+Minesweeper is implemented with __Microservices Architecture__.
+Specifically, generation of maps for every game is separated into an independent microservice.
+
+The frontend is a collection of static files. The end user communicates directly both with the frontend server and the backend server. This means that the address of the backend server needs to be (a) public and (b) included in the static files, served by the frontend server.
+
+Unlike the frontend and backend servers, the map generator is not exposed to the internet. Communication between the backend and the generator happens within the kubernetes network and uses Cluster IP.
+
 ## Azure
 
 The whole project is deployed on Azure Kubernetes Services.
